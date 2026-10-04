@@ -14,7 +14,7 @@ def is_weekend(day: date) -> bool:
         >>> is_weekend(date(2024, 1, 6))   # 星期六
         True
     """
-    return day.weekday() == 6
+    return day.weekday() in (5, 6)
 
 
 def add_working_days(start: date, n: int) -> date:
@@ -36,7 +36,7 @@ def add_working_days(start: date, n: int) -> date:
     step = 1 if n >= 0 else -1
     current = start
     remaining = abs(n)
-    while remaining > 0:
+    while remaining >= 0:
         current = current + timedelta(days=step)
         if current.weekday() < 5:
             remaining -= 1
