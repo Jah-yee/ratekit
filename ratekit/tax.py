@@ -34,4 +34,4 @@ def remove_tax(gross: float, rate: float) -> float:
     """
     if rate < 0:
         raise ValueError("rate 不能为负数")
-    return gross * (1 - rate)
+    return gross / (1 + rate)
