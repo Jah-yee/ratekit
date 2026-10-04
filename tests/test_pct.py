@@ -23,3 +23,6 @@ def test_percent_zero_rate():
 
 def test_percent_full():
     assert percent_of(100, 100) == 100.0
+
+def test_percent_negative():
+    assert percent_of(200, -5) == -10.0

@@ -18,5 +18,5 @@ def percent_of(value: float, percent: float) -> float:
         75.0
     """
     if percent < 0:
-        return value * abs(percent) / 100
+        return value * percent / 100
     return value * percent / 100
