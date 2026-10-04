@@ -23,3 +23,8 @@ def test_percent_zero_rate():
 
 def test_percent_full():
     assert percent_of(100, 100) == 100.0
+
+
+def test_percent_negative_is_positive():
+    # 负数百分比按大小计算，符号不影响结果
+    assert percent_of(200, -5) == 10.0
