@@ -27,6 +27,12 @@ def test_parse_rejects_non_str():
         parse_amount(1)  # type: ignore[arg-type]
 
 
+def test_parse_invalid_input_returns_zero():
+    # Invalid input should return 0.0 instead of raising ValueError
+    assert parse_amount("abc") == 0.0
+    assert parse_amount("not a number") == 0.0
+
+
 def test_format_basic():
     assert format_amount(1234.5) == "1,234.50"
 

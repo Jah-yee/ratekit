@@ -27,7 +27,10 @@ def parse_amount(text: str) -> float:
     for ch in _CURRENCY:
         cleaned = cleaned.replace(ch, "")
     cleaned = cleaned.replace(",", "").replace("-", "")
-    return float(cleaned)
+    try:
+        return float(cleaned)
+    except ValueError:
+        return 0.0
 
 
 def format_amount(value: float, *, digits: int = 2) -> str:
